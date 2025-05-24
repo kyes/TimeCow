@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时赚钱监控器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>实时赚钱监控器</h1>
+        </header>
+
+        <section id="input-section">
+            <label for="monthlySalary">请输入您的月工资 (元):</label>
+            <input type="number" id="monthlySalary" placeholder="例如: 10000" min="0.01" step="0.01">
+            <div class="buttons">
+                <button id="startButton">开始计算</button>
+                <button id="resetButton" style="display: none;">重置</button>
+            </div>
+            <p id="inputError" class="error-message"></p>
+        </section>
+
+        <section id="results-section" style="display: none;">
+            <h2>您的赚钱速度</h2>
+            <p><span id="earningSpeed">0.00</span> 元/分钟</p>
+
+            <h2>累计已赚金额</h2>
+            <p class="accumulated-amount"><span id="accumulatedEarnings">0.00</span> 元</p>
+            <p class="subtle-info">(自 <span id="startTimeDisplay"></span> 开始计算)</p>
+        </section>
+
+        <footer>
+            <p id="workingDaysInfo"></p>
+        </footer>
+    </div>
+
+    <div id="money-animation-container">
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

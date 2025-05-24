@@ -1,0 +1,181 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+#input-section label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+#input-section input[type="number"] {
+    width: calc(100% - 22px); /* Account for padding */
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    text-align: center;
+}
+/* Hide spinner buttons for number input */
+#input-section input[type="number"]::-webkit-outer-spin-button,
+#input-section input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#input-section input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#input-section button {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#startButton {
+    background-color: #3498db;
+    color: white;
+}
+
+#startButton:hover {
+    background-color: #2980b9;
+}
+
+#startButton:active, #resetButton:active {
+    transform: translateY(1px);
+}
+
+#resetButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#resetButton:hover {
+    background-color: #c0392b;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9em;
+    min-height: 1.2em; /* Reserve space to prevent layout shift */
+}
+
+#results-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #eee;
+}
+
+#results-section h2 {
+    color: #3498db;
+    margin-bottom: 8px;
+    font-size: 1.4em;
+}
+
+#results-section p {
+    font-size: 1.3em;
+    margin: 5px 0 15px 0;
+}
+
+#results-section .accumulated-amount {
+    font-weight: bold;
+    font-size: 2.2em; /* Make accumulated earnings stand out */
+    color: #27ae60;
+}
+
+#results-section .accumulated-amount span,
+#results-section #earningSpeed {
+    font-weight: bold;
+}
+
+.subtle-info {
+    font-size: 0.8em !important; /* Override general p styling for this class */
+    color: #7f8c8d;
+    margin-top: -10px !important;
+}
+
+
+footer {
+    margin-top: 30px;
+    font-size: 0.85em;
+    color: #7f8c8d;
+}
+
+#money-animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.money-item {
+    position: absolute; /* Crucial for positioning */
+    user-select: none;  /* Prevent text selection */
+    pointer-events: none; /* Ensure items don't interfere with clicks */
+    will-change: transform, opacity; /* Performance hint for browser */
+    /* font-size, color, etc., will be set by JavaScript for variety */
+    /* Remove any 'animation' or '@keyframes fall' properties from here */
+    display: inline-block; /* Helps with transform origin if not default */
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 1.6em;
+    }
+    #results-section .accumulated-amount {
+        font-size: 1.8em;
+    }
+    #input-section button {
+        padding: 10px 20px;
+    }
+}
